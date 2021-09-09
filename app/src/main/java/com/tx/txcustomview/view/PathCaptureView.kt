@@ -87,7 +87,10 @@ class PathCaptureView(context: Context?, attrs: AttributeSet?) : View(context, a
         super.onDetachedFromWindow()
         Log.d("PathCaptureView","onDetachedFromWindow")
         bitmapBg.recycle()
+        bitmapBg= null
         bitmapDst.recycle()
+        bitmapDst = null
         bitmapSrc.recycle()
+        bitmapSrc = null
     }
 }

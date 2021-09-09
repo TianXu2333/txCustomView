@@ -15,7 +15,7 @@ import com.tx.txcustomview.R
 class BitmapShaderView(context: Context?, attrs: AttributeSet?) : View(context, attrs) {
     private var paint = Paint()
     private var mBitmap :Bitmap = BitmapFactory.decodeResource(resources, R.drawable.hanikezi)
-    private lateinit var mBitmapBg : Bitmap ;
+    private lateinit var mBitmapBg : Bitmap
     private var isInit = false
     private var centerX  = 0f
     private var centerY = 0f
@@ -64,5 +64,10 @@ class BitmapShaderView(context: Context?, attrs: AttributeSet?) : View(context, 
         }
         return true
     }
-
+    override fun onDetachedFromWindow() {
+        super.onDetachedFromWindow()
+        Log.d("PathCaptureView","onDetachedFromWindow")
+        mBitmapBg.recycle()
+        mBitmap.recycle()
+    }
 }

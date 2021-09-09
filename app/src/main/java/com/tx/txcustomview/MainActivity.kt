@@ -12,7 +12,7 @@ import com.tx.txcustomview.menu.MenuName
 class MainActivity : AppCompatActivity() , MenuAdapter.OnItemClickListener {
     private lateinit var binding : ActivityMainBinding
 
-    lateinit var currentMenuName : ObservableField<String>
+    var currentMenuName : ObservableField<String> = ObservableField()
 
     private var adapter = MenuAdapter()
 
@@ -34,7 +34,6 @@ class MainActivity : AppCompatActivity() , MenuAdapter.OnItemClickListener {
         binding.menuList.layoutManager = LinearLayoutManager(this)
         binding.menuList.adapter = adapter
         adapter.listener = this
-        currentMenuName = ObservableField()
         currentMenuName.set(MenuName.PATH_CAPTURE)
         addView(CustomViewFactory.getPathCaptureView(this))
     }
