@@ -44,8 +44,12 @@ class MenuAdapter: RecyclerView.Adapter<MenuViewHolder>() {
 
     private fun initMenuData(){
         var pathCapture = MenuModel(MenuName.PATH_CAPTURE)
-        var bitmapShader = MenuModel(MenuName.BITMAP_SHADER)
         mData.add(pathCapture)
+        var bitmapShader = MenuModel(MenuName.BITMAP_SHADER)
         mData.add(bitmapShader)
+        var shutterView = MenuModel(MenuName.SHUTTER_VIEW)
+        mData.add(shutterView)
+        var checkedView = MenuModel(MenuName.CHECKED_VIEW)
+        mData.add(checkedView)
     }
 }

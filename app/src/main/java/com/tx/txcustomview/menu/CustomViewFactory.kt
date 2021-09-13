@@ -1,10 +1,11 @@
 package com.tx.txcustomview.menu
-
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import com.tx.txcustomview.databinding.BitmapShaderViewBinding
+import com.tx.txcustomview.databinding.CheckedViewBinding
 import com.tx.txcustomview.databinding.PathCaptureViewBinding
+import com.tx.txcustomview.databinding.ShutterViewBinding
 
 
 /**
@@ -18,6 +19,12 @@ class CustomViewFactory {
         }
         fun getBitmapShaderView(context:Context) : View {
             return BitmapShaderViewBinding.inflate(LayoutInflater.from(context),null,false).root
+        }
+        fun getShutterView(context:Context) : View {
+            return ShutterViewBinding.inflate(LayoutInflater.from(context),null,false).root
+        }
+        fun getCheckedView(context:Context) : View {
+            return CheckedViewBinding.inflate(LayoutInflater.from(context),null,false).root
         }
     }
 }

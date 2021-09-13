@@ -7,6 +7,8 @@ package com.tx.txcustomview.menu
 class MenuName {
     companion object {
         const val PATH_CAPTURE = "Path Capture"
-        const val BITMAP_SHADER = "BitmapShader"
+        const val BITMAP_SHADER = "Bitmap Shader"
+        const val SHUTTER_VIEW = "Shutter View"
+        const val CHECKED_VIEW = "Checked View"
     }
 }

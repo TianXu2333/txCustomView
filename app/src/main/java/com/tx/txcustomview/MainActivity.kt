@@ -2,6 +2,9 @@ package com.tx.txcustomview
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.RelativeLayout
 import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tx.txcustomview.databinding.ActivityMainBinding
@@ -43,11 +46,12 @@ class MainActivity : AppCompatActivity() , MenuAdapter.OnItemClickListener {
             return
         }
         currentMenuName.set(name)
-        var view : View
-        when(name){
-            MenuName.PATH_CAPTURE -> view = CustomViewFactory.getPathCaptureView(this)
-            MenuName.BITMAP_SHADER -> view = CustomViewFactory.getBitmapShaderView(this)
-            else -> view = CustomViewFactory.getPathCaptureView(this)
+        var view : View = when(name){
+            MenuName.PATH_CAPTURE -> CustomViewFactory.getPathCaptureView(this)
+            MenuName.BITMAP_SHADER -> CustomViewFactory.getBitmapShaderView(this)
+            MenuName.SHUTTER_VIEW -> CustomViewFactory.getShutterView(this)
+            MenuName.CHECKED_VIEW -> CustomViewFactory.getCheckedView(this)
+            else -> CustomViewFactory.getPathCaptureView(this)
         }
         addView(view)
         binding.drawerLayout.closeDrawer(binding.menuList)
