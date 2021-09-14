@@ -43,6 +43,7 @@ class CheckedView(context: Context?, attrs: AttributeSet?) : View(context, attrs
     private var upAnimDuration = 300L
     // 当前的松手的动画值0~100
     var upCurrentValue = 0F
+
     // 判断是否是外部设置
     var isSet = false
 

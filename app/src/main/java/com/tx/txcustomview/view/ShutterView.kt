@@ -43,6 +43,11 @@ class ShutterView : View ,ShutterTouchEventListener{
     var currentVideoValue = 0f
     var videoDuration = 15000L
 
+    // 取消操作时的动画
+    lateinit var cancelAnimator : ValueAnimator
+    var currentCancelValue = 0f
+    var cancelDuration = 200L
+
     // 圆心x坐标
     var centerX = 0f
     // 圆心y坐标
@@ -57,14 +62,15 @@ class ShutterView : View ,ShutterTouchEventListener{
     var maxRadius = 0f
     // 画笔的不透明度
     var paintAlpha = 255
-
-
+    // 拍照或者录像动画结束时的半径
+    var animEndRadius = 0f
 
     constructor(context: Context): super(context)
 
     constructor(context: Context,attributeSet: AttributeSet): super(context,attributeSet){
         initPictureAnim()
         initVideoAnim()
+        initCancelAnim()
         setLayerType(LAYER_TYPE_SOFTWARE,null)
         rotation = -90f
     }
@@ -123,9 +129,13 @@ class ShutterView : View ,ShutterTouchEventListener{
             }
 
             override fun onAnimationEnd(p0: Animator?) {
+                animEndRadius = drawRadius
                 if (option != unknownOp){
                     videoAnimator.start()
+                }else{
+                    cancelAnimator.start()
                 }
+
             }
 
             override fun onAnimationCancel(p0: Animator?) {
@@ -134,7 +144,6 @@ class ShutterView : View ,ShutterTouchEventListener{
                     listener.takePicture()
                 }
                 option = unknownOp
-                postInvalidate()
             }
 
             override fun onAnimationRepeat(p0: Animator?) {
@@ -165,7 +174,38 @@ class ShutterView : View ,ShutterTouchEventListener{
                     listener.videoEnd()
                 }
                 option = unknownOp
-                postInvalidate()
+                animEndRadius = drawRadius
+                cancelAnimator.start()
+            }
+
+            override fun onAnimationCancel(p0: Animator?) {
+
+            }
+
+            override fun onAnimationRepeat(p0: Animator?) {
+
+            }
+        })
+    }
+    private fun initCancelAnim(){
+        cancelAnimator = ValueAnimator.ofFloat(0f,100f)
+        cancelAnimator.duration = cancelDuration
+        cancelAnimator.addUpdateListener { valueAnimator ->
+            currentCancelValue = valueAnimator.animatedValue as Float
+            drawRadius = if (animEndRadius>radius){
+                animEndRadius - (animEndRadius - radius)*(currentCancelValue/100f)
+            }else {
+                animEndRadius + (animEndRadius - radius)*(currentCancelValue/100f)
+            }
+            postInvalidate()
+        }
+        cancelAnimator.addListener(object  : Animator.AnimatorListener{
+            override fun onAnimationStart(p0: Animator?) {
+
+            }
+
+            override fun onAnimationEnd(p0: Animator?) {
+
             }
 
             override fun onAnimationCancel(p0: Animator?) {
@@ -193,7 +233,7 @@ class ShutterView : View ,ShutterTouchEventListener{
     private fun drawUnknownOp(canvas: Canvas){
         paint.color = Color.WHITE
         paint.alpha = 255
-        canvas.drawCircle(centerX,centerY,radius,paint)
+        canvas.drawCircle(centerX,centerY,drawRadius,paint)
     }
 
     private fun drawTakePicture(canvas: Canvas){
