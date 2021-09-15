@@ -51,5 +51,7 @@ class MenuAdapter: RecyclerView.Adapter<MenuViewHolder>() {
         mData.add(shutterView)
         var checkedView = MenuModel(MenuName.CHECKED_VIEW)
         mData.add(checkedView)
+        var customSwitch = MenuModel(MenuName.CUSTOM_SWITCH)
+        mData.add(customSwitch)
     }
 }

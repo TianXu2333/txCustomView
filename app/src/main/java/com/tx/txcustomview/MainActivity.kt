@@ -51,6 +51,7 @@ class MainActivity : AppCompatActivity() , MenuAdapter.OnItemClickListener {
             MenuName.BITMAP_SHADER -> CustomViewFactory.getBitmapShaderView(this)
             MenuName.SHUTTER_VIEW -> CustomViewFactory.getShutterView(this)
             MenuName.CHECKED_VIEW -> CustomViewFactory.getCheckedView(this)
+            MenuName.CUSTOM_SWITCH -> CustomViewFactory.getCustomSwitch(this)
             else -> CustomViewFactory.getPathCaptureView(this)
         }
         addView(view)

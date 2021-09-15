@@ -10,5 +10,6 @@ class MenuName {
         const val BITMAP_SHADER = "Bitmap Shader"
         const val SHUTTER_VIEW = "Shutter View"
         const val CHECKED_VIEW = "Checked View"
+        const val CUSTOM_SWITCH = "Custom Switch"
     }
 }
