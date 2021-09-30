@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
 import android.widget.RelativeLayout
+import androidx.databinding.ObservableArrayList
 import androidx.databinding.ObservableField
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tx.txcustomview.databinding.ActivityMainBinding
@@ -52,6 +53,7 @@ class MainActivity : AppCompatActivity() , MenuAdapter.OnItemClickListener {
             MenuName.SHUTTER_VIEW -> CustomViewFactory.getShutterView(this)
             MenuName.CHECKED_VIEW -> CustomViewFactory.getCheckedView(this)
             MenuName.CUSTOM_SWITCH -> CustomViewFactory.getCustomSwitch(this)
+            MenuName.LARGE_IMAGE_VIEW -> CustomViewFactory.getLargeView(this)
             else -> CustomViewFactory.getPathCaptureView(this)
         }
         addView(view)

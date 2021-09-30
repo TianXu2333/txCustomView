@@ -53,5 +53,7 @@ class MenuAdapter: RecyclerView.Adapter<MenuViewHolder>() {
         mData.add(checkedView)
         var customSwitch = MenuModel(MenuName.CUSTOM_SWITCH)
         mData.add(customSwitch)
+        var largeImageView = MenuModel(MenuName.LARGE_IMAGE_VIEW)
+        mData.add(largeImageView)
     }
 }

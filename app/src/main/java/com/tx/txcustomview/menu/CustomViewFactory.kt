@@ -26,5 +26,8 @@ class CustomViewFactory {
         fun getCustomSwitch(context:Context) : View {
             return CustomSwitchBinding.inflate(LayoutInflater.from(context),null,false).root
         }
+        fun getLargeView(context:Context) : View {
+            return LargeImageViewBinding.inflate(LayoutInflater.from(context),null,false).root
+        }
     }
 }
