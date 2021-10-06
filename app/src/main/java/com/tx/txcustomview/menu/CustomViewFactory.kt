@@ -29,5 +29,8 @@ class CustomViewFactory {
         fun getLargeView(context:Context) : View {
             return LargeImageViewBinding.inflate(LayoutInflater.from(context),null,false).root
         }
+        fun getCustomLayout(context:Context) : View {
+            return LayoutCustomBinding.inflate(LayoutInflater.from(context),null,false).root
+        }
     }
 }

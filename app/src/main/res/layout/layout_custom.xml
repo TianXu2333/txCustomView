@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.tx.txcustomview.view.CustomLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+    <TextView
+        style="@style/text_style"
+        android:text="杨幂" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="薛之谦" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="迪丽热巴" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="哈尼克孜" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="毛不易" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="易烊千玺" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="林俊杰" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="杨超越" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="杨洋" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="周杰伦" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="王俊凯" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="杨幂" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="薛之谦" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="迪丽热巴" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="哈尼克孜" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="毛不易" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="易烊千玺" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="林俊杰" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="杨超越" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="杨洋" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="周杰伦" />
+
+    <TextView
+        style="@style/text_style"
+        android:text="王俊凯" />
+</com.tx.txcustomview.view.CustomLayout>
+

@@ -12,5 +12,6 @@ class MenuName {
         const val CHECKED_VIEW = "Checked View"
         const val CUSTOM_SWITCH = "Custom Switch"
         const val LARGE_IMAGE_VIEW = "Large ImageView"
+        const val CUSTOM_LAYOUT = "Custom Layout"
     }
 }

@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() , MenuAdapter.OnItemClickListener {
             MenuName.CHECKED_VIEW -> CustomViewFactory.getCheckedView(this)
             MenuName.CUSTOM_SWITCH -> CustomViewFactory.getCustomSwitch(this)
             MenuName.LARGE_IMAGE_VIEW -> CustomViewFactory.getLargeView(this)
+            MenuName.CUSTOM_LAYOUT -> CustomViewFactory.getCustomLayout(this)
             else -> CustomViewFactory.getPathCaptureView(this)
         }
         addView(view)
