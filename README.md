@@ -17,3 +17,6 @@ BitmapShader的使用
 
 ### 6.ShutterView.kt
 仿MIUI的相机快门按钮，支持拍照和录制视频的动画效果
+
+### 7.CustomLayout.kt
+自定义ViewGroup的练习例子
